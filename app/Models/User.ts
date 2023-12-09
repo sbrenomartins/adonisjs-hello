@@ -9,11 +9,17 @@ export default class User extends BaseModel {
   @column()
   public email: string
 
+  @column()
+  public name: string
+
   @column({ serializeAs: null })
   public password: string
 
   @column()
   public rememberMeToken: string | null
+
+  @column()
+  public role: 'admin' | 'normal'
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
